@@ -1,0 +1,76 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">learnHubApp</string>
+    <string name="place_owner">Place owner</string>
+    <string name="instructor">Instructor</string>
+    <string name="student">Student</string>
+    <string name="reg_welcome">welcome to learn hub please choose your type</string>
+    <string name="account_already">Do you have not sign up yet</string>
+    <string name="clickhere">Sign up here</string>
+    <string name="place_owner_form">Place owner register form</string>
+    <string name="full_name">Full name</string>InstructorActivity
+    <string name="email">E-mail</string>
+    <string name="phone">Phone number</string>
+    <string name="pass">enter password</string>
+    <string name="pass2">re enter password</string>
+    <string name="register">Register</string>
+    <string name="instructor_form">Instructor register form</string>
+    <string name="studenr_form">Registeration form</string>
+    <string name="gender">Gender:</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="birthdate">Birth date</string>
+
+    <string name="title_activity_splash" translatable="false">Learn Hub</string>
+    <string name="dummy_button" translatable="false">Dummy Button</string>
+
+    <string name="typename">Full name required</string>
+    <string name="courseName" translatable="false">Course Name</string>
+    <string name="instructorName">Instructor Name</string>
+    <string name="area" translatable="false">Area:</string>
+    <string name="hours" translatable="false">Hours:</string>
+    <string name="cost" translatable="false">Cost:</string>
+    <string name="sign_out">Sign out</string>
+    <string name="instructor_menu">Are you instructor?</string>
+    <string name="contact">Contact us</string>
+    <string name="language">عربي</string>
+    <string name="instructor_page">Instructors page</string>
+    <string name="insins">Welcome to Learn hub, we are looking forward to have great cooperation together, you can add the courses you can learn in this page, please add one couese per time, if you want to add more than one please enter this page again</string>
+    <string name="addcourse">Add Course</string>
+
+    <string name="request_course">Request a course</string>
+    <string name="reqins">If you do not find the course you want to take, you can request it here, and we will arrange a suitable one for you, just fill this form and we will call you in days.</string>
+    <string name="request">Request</string>
+    <string name="remember_me">Remember me</string>
+    <string name="le">LE</string>
+    <string name="forget">Forgot your password?</string>
+    <string name="resetpassword">Reset your password</string>
+    <string name="test">test</string>
+    <string name="search">Search Here ...</string>
+    <array name="Category">
+        <item>Category</item>
+        <item>Web Developing</item>
+        <item>Mobile apps</item>
+        <item>Graphics</item>
+        <item>Languages</item>
+        <item>School curreculum</item>
+        <item>College curreculum</item>
+        <item>Management and soft skills</item>
+        <item>Others</item>
+    </array>
+    <array name="Area">
+        <item>Area</item>
+        <item>Heliopolis</item>
+        <item>Nasr city</item>
+        <item>Shobra</item>
+        <item>Down town</item>
+        <item>Mokattam</item>
+        <item>Maadi</item>
+        <item>New Cairo</item>
+        <item>Ain shams</item>
+        <item>Helwan</item>
+        <item>Dokki</item>
+        <item>Mohandesin</item>
+        <item>Giza</item>
+        <item>October</item>
+    </array>
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InstructorActivity">
+
+    <TextView
+        android:layout_marginTop="100sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/instructor_page"
+        android:textAlignment="center"
+        android:textColor="#054540"
+        android:textSize="25sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/insins"
+        android:textColor="#054540"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:id="@+id/txtcoursename"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="20sp"
+        android:background="@drawable/edit_text"
+        android:hint="@string/courseName"
+        android:paddingStart="16dp" />
+
+    <Spinner
+        android:id="@+id/spncategory"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text"
+        android:drawableEnd="@drawable/learn_hub_logo1"
+        android:entries="@array/Category"
+        android:spinnerMode="dropdown"
+        android:textColor="#054540"/>
+
+    <Spinner
+        android:id="@+id/spnarea"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text"
+        android:dropDownWidth="wrap_content"
+        android:entries="@array/Area"
+       />
+    <Button
+        android:id="@+id/btnadd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/addcourse"
+        android:textSize="20sp"
+        android:textColor="#054540"/>
+
+</LinearLayout>

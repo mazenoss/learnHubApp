@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Learn Hub</string>
+    <string name="account_already">لم تقم بالتسجيل قبل ذلك؟</string>
+    <string name="clickhere">ادخل من هنا</string>
+    <string name="instructor">مدرب</string>
+    <string name="reg_welcome">مرحبا بك، برجاء الاختيار، هل أنت:</string>
+    <string name="student">طالب</string>
+    <string name="place_owner">صاحب أو مدير مكان</string>
+    <string name="place_owner_form">نموذج تسجيل صاحب مكان</string>
+    <string name="full_name">الاسم الكامل</string>
+    <string name="email">البريد الاكتروني</string>
+    <string name="phone">رقم الهاتف</string>
+    <string name="pass">كلمة المرور</string>
+    <string name="pass2">إعادة كلمة المرور</string>
+    <string name="register">تسجيل</string>
+    <string name="instructor_form">نموذج تسجيل مدرب</string>
+    <string name="studenr_form">"نموذج التسجيل "</string>
+    <string name="gender">النوع:</string>
+    <string name="female">أنثى</string>
+    <string name="male">ذكر</string>
+    <string name="birthdate">تاريخ الميلاد</string>
+    <string name="typename">اكتب الاسم بالكامل</string>
+    <string name="insins">مرحبا بك، نحن نتطلع إلى شراكة مفيدة لنا ولك، يمكنك إضافة أي عدد من الكورسات التي يمكنك إعطاؤها، في حالة رغبتك في إضافة كورس آخر يرجى الدخول إلى هذه الصفحة مرة أخرى</string>
+    <string name="instructorName">اسم المدرب</string>
+    <string name="language">English</string>
+    <string name="sign_out">تسجيل الخروج</string>
+    <string name="contact">اتصل بنا</string>
+    <string name="instructor_menu">هل أنت مدرب؟</string>
+    <string name="instructor_page">صفحة المدربين</string>
+    <string name="reqins">إذا لم تجد الكورس الذي تريد حضوره في التطبيق، يمكنك طلبه وسوف نرتب لك  الكورس في أسرع وقت</string>
+    <string name="request_course">أطلب كورس</string>
+    <string name="request">أرسل الطلب</string>
+    <string name="addcourse">إضافة</string>
+</resources>

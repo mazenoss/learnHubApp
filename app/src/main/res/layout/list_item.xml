@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    app:cardBackgroundColor="#9CB807"
+    android:orientation="vertical">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtcoursename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/courseName"
+        android:textColor="#054540"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/txt_instructor_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/instructorName"
+        android:textColor="#054540" />
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
+       android:layout_marginStart="20dp"
+       android:orientation="horizontal">
+       <TextView
+           android:id="@+id/txt_areatitle"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+
+           android:text="@string/area"
+           android:textColor="#054540" />
+       <TextView
+           android:id="@+id/txt_area"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="5dp"
+           android:text="@string/area"
+           android:textColor="#054540" />
+   </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp">
+        <TextView
+            android:id="@+id/txt_hourstitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hours"
+            android:textColor="#054540" />
+    <TextView
+        android:id="@+id/txt_hours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/hours"
+        android:textColor="#054540" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp">
+        <TextView
+            android:id="@+id/txt_costtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cost"
+            android:textColor="#054540" />
+    <TextView
+        android:id="@+id/txt_cost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/cost"
+        android:textColor="#054540" />
+        <TextView
+            android:id="@+id/txt_le"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/le"
+            android:textColor="#054540" />
+    </LinearLayout>
+</LinearLayout>
+
+
+</android.support.v7.widget.CardView>
