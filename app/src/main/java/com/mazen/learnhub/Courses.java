@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.recyclerview.extensions.ListAdapter;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -21,7 +22,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -43,18 +43,17 @@ import java.util.List;
 
 public class Courses extends AppCompatActivity {
 
-private FirebaseFirestore db = FirebaseFirestore.getInstance();
-private CollectionReference courseRef = db.collection("courses");
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private CollectionReference courseRef = db.collection("courses");
 
 
-private CourseAdapter adapter;
+    private CourseAdapter adapter;
 
-//AbdOo
-private ArrayList<list> list = new ArrayList<>();
+    //AbdOo
+    private ArrayList<list> list = new ArrayList<>();
 
-//reserve
+    //reserve
     DatabaseReference databaseReserve;
-
 
 
     @Override
@@ -71,35 +70,32 @@ private ArrayList<list> list = new ArrayList<>();
 
 
     //to view the cardView
-private void setUpRecyclerView(){
+    private void setUpRecyclerView() {
         Query query = courseRef.orderBy("coursename", Query.Direction.ASCENDING);
 
         //AbdOo
-    query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-        @Override
-        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-            if (task.isSuccessful()) {
-                for (QueryDocumentSnapshot document : task.getResult()) {
+        query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
 
-                    list tp = document.toObject(list.class);
-
-                 //   list encap3 = document.getData(list.class);
-
-                    list.add(tp);
-                    Log.i("AbdOo",list+"");
+                        list tp = document.toObject(list.class);
+                        list.add(tp);
+                        Log.i("AbdOo", list + "");
+                    }
+                    adapter.notifyDataSetChanged();
                 }
             }
-        }
-    });
+        });
 
-    //////
-
+        //////
 
 
-        FirestoreRecyclerOptions<list> options = new FirestoreRecyclerOptions.Builder<list>()
-                .setQuery(query,list.class).build();
+//        FirestoreRecyclerOptions<list> options = new FirestoreRecyclerOptions.Builder<list>()
+//                .setQuery(query, list.class).build();
 
-        adapter = new CourseAdapter(options,list);
+        adapter = new CourseAdapter(list);
         RecyclerView recyclerView = findViewById(R.id.recycle);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -113,9 +109,7 @@ private void setUpRecyclerView(){
                 String cid = databaseReserve.push().getKey();
                 String id = documentSnapshot.getId();
                 databaseReserve.child(cid).setValue(id);
-                Toast.makeText(Courses.this, "Your reservation is accepted!",Toast.LENGTH_LONG).show();
-
-
+                Toast.makeText(Courses.this, "Your reservation is accepted!", Toast.LENGTH_LONG).show();
 
 
             }
@@ -124,56 +118,59 @@ private void setUpRecyclerView(){
     }
 
 
-
-
     @Override
     protected void onStart() {
         super.onStart();
-        adapter.startListening();
+//        adapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        adapter.stopListening();
+//        adapter.stopListening();
     }
 
     // menu codes
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
+
         MenuItem searchItem = menu.findItem(R.id.search_ic);
-       // SearchView searchView = (SearchView) searchItem.getActionView();
-        ////searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-           // @Override
-          ///  public boolean onQueryTextSubmit(String query) {
-          //      return false;
-        return false;
-    }
-        //    @Override
-          //  public boolean onQueryTextChange(String newText) {
-           //     if (newText == null || newText.isEmpty()) {
-             //       filter("");
-           ///     } else {
-             ///       filter(newText.trim());
-             //   }
-            //    return false;
-            //}
-       // });
-       // return true;
-        //return super.onCreateOptionsMenu(menu);
-    //}
-    private void filter(String text) {
-        List<list> filteredList = new ArrayList<>();
-      //  //for (list item : clintArrayList) {
-          //  if (item.getCoursename().toLowerCase().contains(text.toLowerCase())) {
-           //     filteredList.add(item);
-          //  }
-        //}
-      //  viewAdapter.filterList(filteredList);
+        android.support.v7.widget.SearchView searchView = (android.support.v7.widget.SearchView) searchItem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                if (s == null || s.isEmpty()) {
+                    filter("");
+                } else {
+                    filter(s.trim());
+                }
+                return false;
+            }
+        });
+
+
+        return true;
     }
 
+    private void filter(String text) {
+        List<list> filteredList = new ArrayList<>();
+        for (list item : list) {
+            if (item.getCoursename().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(item);
+            }
+        }
+        adapter.filterList(filteredList);
+    }
 
 
     /* @Override
@@ -205,7 +202,6 @@ private void setUpRecyclerView(){
     public void onBackPressed() {
         finishAffinity();
     }
-
 
 
 }
